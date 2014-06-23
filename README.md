@@ -3,6 +3,8 @@
 This library contains functionality to configure your models with predefined configuration values, like enums.
 It also gives you a nice object-oriented way to handle these.
 
+[![Build Status](https://travis-ci.org/treehouselabs/model-config.svg)](https://travis-ci.org/treehouselabs/model-config)
+
 ## Enum
 First, you need to define field configurations. Let's say you have a house model, with a type:
 

@@ -22,6 +22,11 @@ abstract class Enum
     protected static $multiValued = false;
 
     /**
+     * @var array
+     */
+    protected static $cache = [];
+
+    /**
      * Creates a new value of some type
      *
      * @param  mixed $value
@@ -35,6 +40,14 @@ abstract class Enum
         }
 
         $this->value = $value;
+    }
+
+    /**
+     * @return string
+     */
+    final public function getName()
+    {
+        return array_search($this->value, self::toArray());
     }
 
     /**
@@ -60,9 +73,13 @@ abstract class Enum
      */
     final public static function toArray()
     {
-        $reflection = new \ReflectionClass(get_called_class());
+        $class = get_called_class();
 
-        return $reflection->getConstants();
+        if (!isset(self::$cache[$class])) {
+            self::$cache[$class] = (new \ReflectionClass($class))->getConstants();
+        }
+
+        return self::$cache[$class];
     }
 
     /**

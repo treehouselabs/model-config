@@ -11,7 +11,8 @@ For a complete list of releases, see the [releases page][0].
 ## v1.1.0
 
 ### Changes
-*
+* Cached `Enum::toArray()` results to prevent redundant reflection calls
+* Added `Enum::getName()` method
 
 ## v1.0.0
 * First stable release

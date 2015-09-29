@@ -1,11 +1,24 @@
 # Model config
 
-This library contains functionality to configure your models with predefined configuration values, like enums.
-It also gives you a nice object-oriented way to handle these.
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
 
-[![Build Status](https://travis-ci.org/treehouselabs/model-config.svg)](https://travis-ci.org/treehouselabs/model-config)
+This library contains functionality to configure your models with predefined
+configuration values, like enums. It also gives you a nice object-oriented way
+to handle these.
 
-## Enum
+
+## Installation
+
+```sh
+composer require treehouselabs/model-config
+```
+
+## Usage
+
 First, you need to define field configurations. Let's say you have a house model, with a type:
 
 ```php
@@ -89,3 +102,41 @@ $config->hasFieldConfigValue('type', 'apartment'); // true
 $config->getFieldConfigValueByKey('type', 2); // 'apartment'
 $config->getFieldConfigKey('type', 'apartment'); // 2
 ```
+
+## Testing
+
+``` bash
+composer test
+```
+
+
+## Security
+
+If you discover any security related issues, please email dev@treehouse.nl instead of using the issue tracker.
+
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+## Credits
+
+- [Peter Kruithof][link-author]
+- [All Contributors][link-contributors]
+
+
+[ico-version]: https://img.shields.io/packagist/v/treehouselabs/model-config.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/treehouselabs/model-config/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/treehouselabs/model-config.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/treehouselabs/model-config.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/treehouselabs/model-config.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/treehouselabs/model-config
+[link-travis]: https://travis-ci.org/treehouselabs/model-config
+[link-scrutinizer]: https://scrutinizer-ci.com/g/treehouselabs/model-config/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/treehouselabs/model-config
+[link-downloads]: https://packagist.org/packages/treehouselabs/model-config
+[link-author]: https://github.com/treehouselabs
+[link-contributors]: ../../contributors

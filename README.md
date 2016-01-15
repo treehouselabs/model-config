@@ -11,6 +11,11 @@ configuration values, like enums. It also gives you a nice object-oriented way
 to handle these.
 
 
+## Requirements
+
+* PHP >= 5.5
+* The stemmer extension: https://github.com/jbboehr/php-stemmer
+
 ## Installation
 
 ```sh

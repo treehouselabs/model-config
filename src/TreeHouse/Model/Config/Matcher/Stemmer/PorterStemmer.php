@@ -31,7 +31,15 @@ class PorterStemmer implements StemmerInterface
      */
     public function stem($word)
     {
-        return stemword($this->slugify($word), $this->language, $this->encoding);
+        if (function_exists('stemmer_stem_word')) {
+            $func = 'stemmer_stem_word';
+        } elseif (function_exists('stemword')) {
+            $func = 'stemword';
+        } else {
+            throw new \RuntimeException('The php-stemmer extension was not installed/configured properly');
+        }
+
+        return $func($this->slugify($word), $this->language, $this->encoding);
     }
 
     /**
